@@ -57,7 +57,9 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public int delete() {
-		// TODO Auto-generated method stub
-		return 0;
+		LOGGER.info("Please enter the id of the Item you would like to delete");
+		Long id = utils.getLong();
+		LOGGER.info("Item deleted!");
+		return itemDAO.delete(id);
 	}
 }
