@@ -9,6 +9,19 @@ public class Order {
 	private Long itemId;
 	private int quantity;
 
+	public Order(Long id, Long customerId) {
+		super();
+		this.id = id;
+		this.customerId = customerId;
+	}
+	
+	public Order(Long id, Long itemId, int quantity) {
+		super();
+		this.id = id;
+		this.itemId = itemId;
+		this.quantity = quantity;
+	}
+	
 	public Order(Long id, Long customerId, Long itemId, int quantity) {
 		super();
 		this.id = id;
