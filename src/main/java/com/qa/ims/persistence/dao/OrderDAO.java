@@ -138,8 +138,19 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	@Override
-	public Order update(Order t) {
-		// TODO Auto-generated method stub
+	public Order update(Order order) {
+		try (Connection connection = DBUtils.getInstance().getConnection();
+				PreparedStatement statement = connection
+						.prepareStatement("UPDATE orders_items SET item_id = ?, quantity = ? WHERE order_id = ?");) {
+			statement.setLong(1, order.getItemId());
+			statement.setInt(2, order.getQuantity());;
+			statement.setLong(3, order.getId());
+			statement.executeUpdate();
+			return read(order.getId());
+		} catch (Exception e) {
+			LOGGER.debug(e);
+			LOGGER.error(e.getMessage());
+		}
 		return null;
 	}
 
