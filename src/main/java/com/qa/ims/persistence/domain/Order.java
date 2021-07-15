@@ -8,6 +8,11 @@ public class Order {
 	private Long customerId;
 	private Long itemId;
 	private int quantity;
+	
+	public Order(Long customerId) {
+		super();
+		this.customerId = customerId;
+	}
 
 	public Order(Long id, Long customerId) {
 		super();

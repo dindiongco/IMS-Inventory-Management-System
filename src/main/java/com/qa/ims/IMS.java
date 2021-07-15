@@ -7,8 +7,10 @@ import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
 import com.qa.ims.controller.ItemController;
+import com.qa.ims.controller.OrderController;
 import com.qa.ims.persistence.dao.CustomerDAO;
 import com.qa.ims.persistence.dao.ItemDAO;
+import com.qa.ims.persistence.dao.OrderDAO;
 import com.qa.ims.persistence.domain.Domain;
 import com.qa.ims.utils.DBUtils;
 import com.qa.ims.utils.Utils;
@@ -19,6 +21,7 @@ public class IMS {
 
 	private final CustomerController customers;
 	private final ItemController items;
+	private final OrderController orders;
 	private final Utils utils;
 
 	public IMS() {
@@ -27,6 +30,8 @@ public class IMS {
 		this.customers = new CustomerController(custDAO, utils);
 		final ItemDAO itemDAO = new ItemDAO();
 		this.items = new ItemController(itemDAO, utils);
+		final OrderDAO orderDAO = new OrderDAO();
+		this.orders = new OrderController(orderDAO, utils);
 	}
 
 	public void imsSystem() {
@@ -58,6 +63,7 @@ public class IMS {
 				active = this.items;
 				break;
 			case ORDER:
+				active = this.orders;
 				break;
 			case STOP:
 				return;
@@ -73,12 +79,12 @@ public class IMS {
 			if (action == Action.RETURN) {
 				changeDomain = true;
 			} else {
-				doAction(active, action);
+				doAction(active, orders, action);
 			}
 		} while (!changeDomain);
 	}
 
-	public void doAction(CrudController<?> crudController, Action action) {
+	public void doAction(CrudController<?> crudController, OrderController orderControl, Action action) {
 		switch (action) {
 		case CREATE:
 			crudController.create();
@@ -91,6 +97,9 @@ public class IMS {
 			break;
 		case DELETE:
 			crudController.delete();
+			break;
+		case ADD:
+			orderControl.addItem();
 			break;
 		case RETURN:
 			break;
