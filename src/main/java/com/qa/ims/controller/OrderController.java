@@ -73,5 +73,13 @@ public class OrderController implements CrudController<Order> {
 		return orderDAO.delete(id);
 	}
 	
+	public Double calculateCost() {
+		LOGGER.info("Please enter the Order ID: ");
+		Long orderId = utils.getLong();
+		Double total = orderDAO.calculateCost(orderId);
+		LOGGER.info("Your Total is: £" + total);
+		
+		return total;
+	}
 
 }

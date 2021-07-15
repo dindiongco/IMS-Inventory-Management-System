@@ -101,6 +101,9 @@ public class IMS {
 		case ADD:
 			orderControl.addItem();
 			break;
+		case TOTAL:
+			orderControl.calculateCost();
+			break;
 		case RETURN:
 			break;
 		default:
