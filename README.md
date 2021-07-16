@@ -23,6 +23,11 @@ By opening the file in a Java IDE and then running JUnit test on the source fold
 Unit is a testing approach that targets each unit of a block of code and tests their functionality. Unit tests are essential in that it allows the developer in finding potential problems prior to release. Testing is essential to provide quality assurance. 
 
 
+## Jira
+
+Link to project management board:
+https://team-1623762470801.atlassian.net/jira/software/projects/ISJD/boards/4
+
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
