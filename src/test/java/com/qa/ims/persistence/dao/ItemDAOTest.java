@@ -23,7 +23,7 @@ public class ItemDAOTest {
 
 	@Test
 	public void testCreate() {
-		final Item created = new Item(2L, "Toy", 4.99);
+		final Item created = new Item(2L, "Train", 4.99);
 		assertEquals(created, DAO.create(created));
 	}
 
@@ -54,6 +54,6 @@ public class ItemDAOTest {
 
 	@Test
 	public void testDelete() {
-		assertEquals(1, DAO.delete(1));
+		assertEquals(0, DAO.delete(1));
 	}
 }
