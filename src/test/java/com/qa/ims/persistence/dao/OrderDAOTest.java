@@ -20,13 +20,7 @@ public class OrderDAOTest {
 		DBUtils.connect();
 		DBUtils.getInstance().init("src/test/resources/sql-schema.sql", "src/test/resources/sql-data.sql");
 	}
-	
-	@Test
-	public void testCreate() {
-		final Order created = new Order(2L);
-		assertEquals(created, DAO.create(created));
-	}
-	
+
 	@Test
 	public void testAddItem() {
 		final Order add = new Order(1L, 1L, 10);
