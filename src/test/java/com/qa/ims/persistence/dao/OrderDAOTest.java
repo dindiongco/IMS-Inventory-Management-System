@@ -54,7 +54,12 @@ public class OrderDAOTest {
 
 	@Test
 	public void testDelete() {
-		assertEquals(0, DAO.delete(1));
+		assertEquals(1, DAO.delete(1));
+	}
+	
+	@Test
+	public void testDeleteItem() {
+		assertEquals(1, DAO.deleteItem(1));
 	}
 
 }

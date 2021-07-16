@@ -104,5 +104,17 @@ public class OrderControllerTest {
 		Mockito.verify(dao, Mockito.times(1)).addItem(add);
 	}
 	
+	@Test
+	public void testDeleteItem() {
+		final long ID = 1L;
+
+		Mockito.when(utils.getLong()).thenReturn(ID);
+		Mockito.when(dao.deleteItem(ID)).thenReturn(1);
+
+		assertEquals(1L, this.controller.deleteItem());
+
+		Mockito.verify(utils, Mockito.times(1)).getLong();
+		Mockito.verify(dao, Mockito.times(1)).deleteItem(ID);
+	}
 
 }

@@ -1,68 +1,27 @@
-Coverage: 34%
-# Project Title
+# Inventory Management System
 
-One Paragraph of project description goes here
+This Project was to create an Inventory Management System application using Java and MySQL. Java was used as a Back-end programming language that creates an application that can connect to a database in MySQL and make changes there. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To use this application, clone the repository into a local folder and run the application from the ims-0.0.1-jar-with-dependencies.jar file using the java -jar command. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You will need at least Java 1.8 and MySQL Server 5.7+ (local or GCP instance).
 
-```
-Give examples
-```
 
-### Installing
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
-Explain how to run the automated tests for this system. Break down into which tests and what they do
+By opening the file in a Java IDE and then running JUnit test on the source folder. 
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+Unit is a testing approach that targets each unit of a block of code and tests their functionality. Unit tests are essential in that it allows the developer in finding potential problems prior to release. Testing is essential to provide quality assurance. 
 
-```
-Give an example
-```
-
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
